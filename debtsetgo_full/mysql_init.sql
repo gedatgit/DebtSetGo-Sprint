@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
     user_id       INT AUTO_INCREMENT PRIMARY KEY,
     email         VARCHAR(100) NOT NULL UNIQUE,
     full_name     VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,  -- ADD THIS LINE
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 

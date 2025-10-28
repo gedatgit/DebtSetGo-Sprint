@@ -8,12 +8,16 @@ export default function Auth({ setUserId }) {
   const [message, setMessage] = useState("");
 
   const handleRegister = async () => {
-    const res = await register({ email, fullName, password });
+    console.log("Sending register data:", {email, fullName, password});
+    const res = await register({ email, fullName, password});
+    console.log("Server response: ", res);
     if (res.userId) setMessage("✅ Registered!");
   };
 
   const handleLogin = async () => {
+    
     const res = await login({ email, password });
+    
     if (res.userId) {
       setUserId(res.userId);
       setMessage("✅ Logged in!");
